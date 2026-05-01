@@ -1,0 +1,63 @@
+#
+# wm independent hotkeys
+#
+
+alt + shift + Return
+	urxvt
+
+alt + Return
+	bspc node -s last
+
+alt + shift + @space
+	rofi -show drun
+
+super + r
+	pkill -USR1 -x sxhkd
+
+XF86AudioLowerVolume
+	pactl -- set-sink-volume 0 -5%
+
+XF86AudioRaiseVolume
+	pactl -- set-sink-volume 0 +5%
+
+XF86AudioMute
+	pactl -- set-sink-volume 0 toggle
+
+Print
+	flameshot gui
+
+alt + shift + {q,r}
+	bspc {quit,wm -r}
+
+alt + shift + {BackSpace, q}
+	bspc node -{c,k}
+
+alt + m
+	bspc desktop -l next
+
+alt + {t, f}
+	bspc node -t {tiled,floating}
+
+alt + {j,k}
+	bspc node -f {prev,next}.local.leaf
+
+alt + Tab
+	bspc desktop -f last 
+
+alt + shift + {1-9}
+	bspc node -d '^{1-9}'
+ 
+alt + {1-9}
+	bspc desktop -f '^{1-9}'
+
+super + ctrl + space
+	bspc node -p cancel
+
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,top 0 -20,right 20 0}
+
+super + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
