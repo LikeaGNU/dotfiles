@@ -11,21 +11,21 @@ URxvt.depth: 32
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.background: rgba:2121/2121/2121/EEEE
 URxvt.font: xft:Noto Sans Mono:style=Regular:pixelsize=12:hinting=true
 URxvt.scrollBar: false
 URxvt.perl-lib: /home/curious/.config/urxvt/ext
-URxvt.perl-ext-common: default,matcher,font-size
+URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 URxvt.iso14755: false
 URxvt.underlineURLs: true
 URxvt.matcher.button: 1
 URxvt*letterSpace: -1
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-
+URxvt.keysym.C-minus: resize-font:smaller
+URxvt.keysym.C-plus: resize-font:bigger
+URxvt.keysym.C-equal: resize-font:reset
+URxvt.keysym.C-question: resize-font:show
+URxvt.resize-font.step: 2
 
 
 !! Emacs specific
@@ -35,22 +35,6 @@ emacs.menuBar: off
 emacs.verticalScrollBars: off
 emacs.font: Hack-10
 
-!! Common theme
-*.background: #000000
-*.foreground: #FFFFFF
-*.color0: #000000
-*.color1: #101010
-*.color2: #212121
-*.color3: #323232
-*.color4: #434343
-*.color5: #545454
-*.color6: #656565
-*.color7: #767676
-*.color8: #878787
-*.color9: #989898
-*.color10: #A9A9A9
-*.color11: #BABABA
-*.color12: #CBCBCB
-*.color13: #DCDCDC
-*.color14: #EDEDED
-*.color15: #FFFFFF
+! includes
+#include ".config/Xresources/chinese_lamps_theme.xresources"
+

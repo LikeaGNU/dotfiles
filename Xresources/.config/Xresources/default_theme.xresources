@@ -1,0 +1,19 @@
+!! Common theme
+*.background: #000000
+*.foreground: #FFFFFF
+*.color0: #000000
+*.color1: #101010
+*.color2: #212121
+*.color3: #323232
+*.color4: #434343
+*.color5: #545454
+*.color6: #656565
+*.color7: #767676
+*.color8: #878787
+*.color9: #989898
+*.color10: #A9A9A9
+*.color11: #BABABA
+*.color12: #CBCBCB
+*.color13: #DCDCDC
+*.color14: #EDEDED
+*.color15: #FFFFFF

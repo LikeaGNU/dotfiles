@@ -61,3 +61,6 @@ alt + shift + {h,j,k,l}
 
 super + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+alt + b
+	polybar-msg cmd toggle 
