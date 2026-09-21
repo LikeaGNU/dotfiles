@@ -1,54 +1,82 @@
 #
-# wm independent hotkeys
+# Bindy sxhkd
 #
 
+# Otwórz terminal
 alt + shift + Return
 	urxvt
 
+# Przejdź do poprzedniego okna
 alt + Return
 	bspc node -s last
 
+# Otwórz menu programów
 alt + shift + @space
-	rofi -show drun
+	dmenu_run
 
+# Restartuj sxhkd
 super + r
 	pkill -USR1 -x sxhkd
 
+# Zmniejsz głośność o 5%
 XF86AudioLowerVolume
-	pactl -- set-sink-volume 0 -5%
+  mpc volume -1
 
+# Zwiększ głośność o 5%
 XF86AudioRaiseVolume
-	pactl -- set-sink-volume 0 +5%
+  mpc volume +1
 
-XF86AudioMute
-	pactl -- set-sink-volume 0 toggle
+XF86AudioPlay
+  mpc -p 6686 toggle
 
+XF86AudioStop
+  mpc -p 6686 stop
+
+XF86AudioNext
+  mpc -p 6686 seek +00:00:02
+
+XF86AudioPrev
+  mpc -p 6686 seek -00:00:02
+
+# Zrób zrzut ekranu
 Print
 	flameshot gui
 
+# Wyjdź/Restartuj bspwm
 alt + shift + {q,r}
 	bspc {quit,wm -r}
 
-alt + shift + {BackSpace, q}
-	bspc node -{c,k}
+# Zabij okno
+alt + shift + BackSpace
+	bspc node -k
 
+# Przełącz layout okien na następny
 alt + m
 	bspc desktop -l next
 
+# Przełącz layout okien na kafelkowy/float
 alt + {t, f}
 	bspc node -t {tiled,floating}
 
+# Przejdź do poprzedniego/następnego okna w przestrzeni roboczej
 alt + {j,k}
 	bspc node -f {prev,next}.local.leaf
 
+# Przejdź do poprzedniego okna
 alt + Tab
 	bspc desktop -f last 
 
+# Przenieś okno do wybranej przestrzeni roboczej
 alt + shift + {1-9}
-	bspc node -d '^{1-9}'
+	bspc node -d '^{1-9}' 
  
+# Przełącz orientację okien
+super + Return
+  bspc node @parent -y next
+
+# Przejdź do wybranej przestrzeni roboczej
 alt + {1-9}
-	bspc desktop -f '^{1-9}'
+	bspc desktop -f '^{1-9}' 
 
 super + ctrl + space
 	bspc node -p cancel
@@ -56,10 +84,11 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,top 0 -20,right 20 0}
-
 super + {h,j,k,l}
+	bspc node any -z { right -20 0,top 0 -20, top 0 20, right -20 0}
+
+# Przesuń bieżące okno w trybie float
+super + shift + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 alt + b

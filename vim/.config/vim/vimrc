@@ -16,20 +16,19 @@ set shiftwidth=2
 set softtabstop=2
 set laststatus=2
 set foldmethod=manual
+set showcmd
+set autocomplete
+
+filetype plugin indent on
+
 let mapleader = "\<SPACE>"
-
-map <leader>bl :buffers<CR>
-map <leader>bn :bnext<CR>
-map <leader>bp :bprev<CR>
-map <leader>tn :tabnew<CR>
-
-if exists('g:plugs["$nerdtree"]')
-  map <leader>nd :NERDTreeToggle<CR>
-endif
 
 call plug#begin()
   Plug 'sheerun/vim-polyglot'
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-fugitive'
   Plug 'vimwiki/vimwiki'
+"  Plug 'ycm-core/YouCompleteMe'
 call plug#end()
+
+

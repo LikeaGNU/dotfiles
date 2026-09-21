@@ -4,14 +4,17 @@
 
 !! URxvt specific
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.urlLanucher: librewolf
+URxvt.urlLanucher: firefox
 URxvt.saveline: 1024
 URxvt.internalBorder: 20
 URxvt.depth: 32
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.font: xft:Noto Sans Mono:style=Regular:pixelsize=12:hinting=true
+! URxvt.font: xft:Noto Sans Mono:style=Regular:pixelsize=12:hinting=true
+URxvt.font: xft:Fira Code:style=Regular:pixelsize=12:hinting=true,xft:FontAwesome:style=Regular
+URxvt.boldFont: xft:Fira Code:style=Bold:pixelsize=12:hinting=true
+URxvt.italicFont: xft:Fira Code:style=Retina,Regular:pixelsize=12:hinting=true
 URxvt.scrollBar: false
 URxvt.perl-lib: /home/curious/.config/urxvt/ext
 URxvt.perl-ext-common: default,matcher,resize-font
@@ -27,7 +30,6 @@ URxvt.keysym.C-equal: resize-font:reset
 URxvt.keysym.C-question: resize-font:show
 URxvt.resize-font.step: 2
 
-
 !! Emacs specific
 emacs.internalBorder: 20
 emacs.externalBorder: 0
@@ -35,6 +37,7 @@ emacs.menuBar: off
 emacs.verticalScrollBars: off
 emacs.font: Hack-10
 
-! includes
-#include ".config/Xresources/chinese_lamps_theme.xresources"
+!! #include ".config/Xresources/void16.xresources"
+#include ".config/Xresources/linux_theme.xresources"
 
+URxvt.background:rgba:0000/0000/0000/dddd
