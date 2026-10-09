@@ -1,0 +1,6 @@
+newsboat/.config/newsboat/urls
+*~
+~*~
+#*#
+.log
+vim/.config/vim/plugged/*
