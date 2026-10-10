@@ -1,6 +1,10 @@
 newsboat/.config/newsboat/urls
 *~
+*.swp
 ~*~
 #*#
 .log
 vim/.config/vim/plugged/*
+
+mpd/.config/mpd/*
+! mpd/.config/mpd/*.conf
