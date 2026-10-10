@@ -35,7 +35,7 @@ emacs.internalBorder: 20
 emacs.externalBorder: 0
 emacs.menuBar: off
 emacs.verticalScrollBars: off
-emacs.font: Hack-10
+emacs.font: Fira Code-10
 
 !! #include ".config/Xresources/void16.xresources"
 #include ".config/Xresources/linux_theme.xresources"
